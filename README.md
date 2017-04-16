@@ -1,4 +1,4 @@
-![](https://github.com/0x024/FRT/blob/master/data/temp/exp.jpg) 
+![](https://github.com/0x024/FRT/blob/master/data/temp/exp.png) 
 ## 0x01 环境:
 [![](https://img.shields.io/badge/Ubuntu-16.04LTS-brightgreen.svg)]()
 [![](https://img.shields.io/badge/Python-2.7-brightgreen.svg)]()

@@ -82,7 +82,7 @@ def detect(filename):
 			detail=get_detail()
 			# if not os.path.exists('./data/at/{}/{}.pgm'.format(detail[0],filesdir)):
 				# shutil.copyfile("./data/search_img/{}/{}.pgm".format(filesdir,time.strftime('%Y%m%d%H%M%S')),"./data/at/%s/%s.pgm"%(detail[0],filesdir))
-			ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=60,line_type=cv2.LINE_AA, color=(0,255,165), thickness=2, bottomLeftOrigin=True)
+			ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=30,line_type=cv2.LINE_AA, color=(0,255,165), thickness=1, bottomLeftOrigin=True)
 		else:
 			print"Unknow face"
 			cv2.putText(img,"Unknow", (x, y - 10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,225), 2)

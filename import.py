@@ -77,7 +77,7 @@ def get_ID_name(dir,topdown=True):
 			print("******************************************")
 			check_stuID(ID)
 def main():
-	FaceAPI.facesetdelete(check_empty=0)
+	# FaceAPI.facesetdelete(check_empty=0)
 	create_table()
 	get_ID_name('./data/import')
 	cur.execute("delete from `face_data` where ID=0;")

@@ -71,7 +71,7 @@ def get_ID_name(dir,topdown=True):
 			fileList.append(os.path.join(root,PicName)) 
 		for f in sorted(fileList):
 			imagedir=f
-			temp=f.split('/')[4].split('.')
+			temp=f.split('/')[3].split('.')
 			ID=temp[0]
 			name=temp[1]
 			print("******************************************")

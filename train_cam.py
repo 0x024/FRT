@@ -38,16 +38,20 @@ def video():
 				cv2.imwrite('./data/temp/temp.pgm',f)
 				result=FaceAPI.searchItoI('./data/temp/temp.pgm')
 				if len(result)==4:
-					break			
-				face_token=result["results"][0]["face_token"]
-				detail=get_detail()
-				confidence=result["results"][0]["confidence"]
-				print confidence
-				if confidence>=85.00:
-					shutil.copyfile("./data/temp/temp.pgm","./data/at/%s/%s.pgm"%(detail[0],datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')))
-				ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=60,line_type=cv2.LINE_AA, color=(0,255,165), thickness=2, bottomLeftOrigin=True)
-				print count
+					break
+				if result["results"][0]["confidence"] >= 80.00:
+					print result["results"][0]["confidence"]
+					face_token=result["results"][0]["face_token"]
+					detail=get_detail()
+					# shutil.copyfile("./data/temp/temp.pgm","./data/at/%s/%s.pgm"%(detail,time.strftime('%Y%m%d%H%M%S')))
+					print detail
+					ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=60,line_type=cv2.LINE_AA, color=(0,255,165), thickness=2, bottomLeftOrigin=True)
+					# count+=1
+				else:
+					print"Unknow face"
+					cv2.putText(img,"Unknow", (x, y - 10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,225), 2)   
 			count +=1
+			print count
 		cv2.namedWindow("image",cv2.WINDOW_NORMAL)
 		cv2.imshow("image",frame)
 		if cv2.waitKey(1000 / 12)&0xff==ord("q"):

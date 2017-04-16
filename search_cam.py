@@ -49,7 +49,7 @@ def read_images(sz=None):
     return [X,y]
 
 def get_detail():
-    cur.execute("select * from face_data where face_token='%s'"%db_face_token)
+    cur.execute("select * from face_data where face_token='%s'"%face_token)
     line=cur.fetchone()
     ID,name,gender=line[0],line[1],line[3]
     detail=[ID,name]
@@ -57,14 +57,7 @@ def get_detail():
 def video():
     global db_face_token
     count = 0
-    names = ['141402060901','141402060902','141402060903','141402060904','141402060905',
-            '141402060906','141402060907','141402060908','141402060909',
-            '141402060910','141402060911','141402060912','141402060913',
-            '141402060914','141402060915','141402060916','141402060917',
-            '141402060918','141402060919','141402060920','141402060921',
-            '141402060922','141402060923','141402060924','141402060925',
-            '141402060926','141402060927','141402060928','141402060929',
-            '141402060930','141402060931','141402060932','141402060933']
+    names = ['100000000001','100000000002','100000000003','100000000004']
     [X,y] = read_images()
     y = np.asarray(y, dtype=np.int32)
     model = cv2.face.createLBPHFaceRecognizer()
@@ -89,12 +82,17 @@ def video():
                 result=FaceAPI.searchItoI(image_file='./data/temp/temp.pgm')
                 if len(result)==4:
                     break
-                db_face_token=result["results"][0]["face_token"]
-                detail=get_detail()
+                if result["results"][0]["confidence"] >= 80.00:
+                    print result["results"][0]["confidence"]
+                    face_token=result["results"][0]["face_token"]
+                    detail=get_detail()
                 # shutil.copyfile("./data/temp/temp.pgm","./data/at/%s/%s.pgm"%(detail,time.strftime('%Y%m%d%H%M%S')))
-                print detail
-                ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=60,line_type=cv2.LINE_AA, color=(0,255,165), thickness=2, bottomLeftOrigin=True)
-                count+=1
+                    print detail
+                    ft.putText(img=img,text=detail[1], org=(x, y - 10), fontHeight=60,line_type=cv2.LINE_AA, color=(0,255,165), thickness=2, bottomLeftOrigin=True)
+                    count+=1
+                else:
+                    print"Unknow face"
+                    cv2.putText(img,"Unknow", (x, y - 10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0,0,225), 2)        
         else:
             for (x, y, w, h) in faces:
                 img = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,255),2)
@@ -102,7 +100,7 @@ def video():
                 roi=gray[x:x+w,y:y+h]
                 try:
                     roi = cv2.resize(roi, (200, 200), interpolation=cv2.INTER_LINEAR)
-                    print roi.shape 
+                    # print roi.shape 
                     params = model.predict(roi)
                     print "Label: %s, Confidence: %.2f" % (params[0], params[1])
                     # ft.putText(img=img, text=names[params[0]-1], org=(x, y - 20), line_type=cv2.LINE_AA, color=(0,255,255), thickness=2,bottomLeftOrigin=True)
@@ -112,7 +110,8 @@ def video():
                         cv2.imwrite('face_rec.jpg', img)
                 except:
                     continue
-            count+=1
+        count+=1
+        print count
         cv2.namedWindow("camera",cv2.WINDOW_NORMAL);  
         cv2.imshow("camera",img)
         if cv2.waitKey(1000 / 12)&0xff==ord("q"):

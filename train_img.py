@@ -5,7 +5,6 @@ import sys
 import shutil
 from face import FaceAPI
 from face import DBConnect
-# outer_id="141402060900"
 
 reload(sys)
 sys.setdefaultencoding('utf8')

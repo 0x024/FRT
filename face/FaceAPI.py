@@ -1,8 +1,8 @@
 import os
 import json
 from subprocess import Popen,PIPE
-api_key="0x024"
-api_secret="0x024"
+api_key="PxcWNl91AtsF51DiaeUhNYZXS18vu6_3"
+api_secret="HHWh27sBEcjzm4Nta4ZEIMisjLhRX5vA"
 outer_id="0x024"
 path='./data/log'
 

@@ -64,7 +64,8 @@ ippicv_linux_20151201.tgz，
 	需要将./face/FaceAPI.py中的api_key和api_secret换成你的
 	(为了便于您测试,我以将我的key放在里面，为了防止多人使用outer_id冲突，希望您后期换成自己的)
 	需要将./face/FaceAPI.py中的outer_id设置成自己喜欢的标识
-	需要在搭建的MYSQL中创建一个FRT数据库，并且事先在FRT中创建一个表，表名和值可任意设置！
+	需要在搭建的MYSQL中创建一个FRT数据(要求排列顺序规则为：utf8_general_ci)库，并且事先在FRT
+	中创建一个表，表名和值可任意设置！
 	需要将./face/Dbconnect.py中的数据库信息换成自己的
 	需要将所有的图片ID设置成12位数字
 	如果需要重新导入或者识别同一张照片，需要在.data/log/*.log 删除对应log即可

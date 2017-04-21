@@ -45,11 +45,11 @@ OpenCV 3.2.0——-关于如何安装OpenCV，这里就简单的说一下下，
 	make -j4  #这里的-j4代表怎么说好呢，反正越大，编译的速度越快
 	sudo make install
 ```
-这里说一下了。在运行cmake的时候，需要下载几个文件，比如
+这里说一下了。在运行cmake的时候会下载几个文件，比如
 ```
 ippicv_linux_20151201.tgz，
 ```
-需要挂代理，，关于如何在ubuntu上安装shadowsocks科学上网，我的博客也有写过，
+需要挂代理，不挂代理无法完成camke！，关于如何在ubuntu上安装shadowsocks科学上网，我的博客也有写过，
 
 
 ## 0x02 目录树:

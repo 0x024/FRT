@@ -30,7 +30,7 @@ OpenCV 3.2.0——-关于如何安装OpenCV，这里就简单的说一下下，
 ```
 
 ```
-从baiduyun上下载OpenCV的源码:So you can also download it in the official
+从百度云上下载OpenCV的源码:So you can also download it in the official
       链接: http://pan.baidu.com/s/1pKEgRyV 密码: r4qv       #这个是最新的OpenCV3.2.0的代码
       链接: http://pan.baidu.com/s/1bo8zIN1 密码: bmek #这个里面有一些模块，比如freetype，face，等需要用到
 ```

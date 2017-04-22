@@ -30,9 +30,9 @@ OpenCV 3.2.0——-关于如何安装OpenCV，这里就简单的说一下下，
 ```
 
 ```
-从github上下载OpenCV最新的源码:
-      git clone https://github.com/opencv/opencv.git       #这个是最新的OpenCV 公布在github上的代码
-      git clone https://github.com/opencv/opencv_contrib.git #这个里面有一些模块，比如freetype，face，等需要用到
+从OpenCV上下载OpenCV最新的源码:So you can also download it in the official
+      链接: http://pan.baidu.com/s/1pKEgRyV 密码: r4qv       #这个是最新的OpenCV3.2.0的代码
+      链接: http://pan.baidu.com/s/1bo8zIN1 密码: bmek #这个里面有一些模块，比如freetype，face，等需要用到
 ```
 官网的教程里面将两个包分开进行编译，但是里面的许多包我们确实用不到，所以，最好的办法，就是将./opencv_contrib/moudles/freetype和face文件夹直接复制到./opencv/moudles/下
 

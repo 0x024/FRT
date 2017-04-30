@@ -13,7 +13,7 @@
 
 ## 0x02 目录树:
 
-
+![image](https://github.com/0x024/FRT/blob/master/data/temp/tree.png)
 
 ## 0x03 执行:
 

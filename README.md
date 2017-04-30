@@ -1,17 +1,14 @@
 ## 0xFF:
 最新环境配置请到我的博客查看
+
 [www.0x024.com](www.0x024.com) 
+
 星期日, 30. 四月 2017 09:28下午 
 
 ## 0x00 预览：
 ![](https://github.com/0x024/FRT/blob/master/data/temp/exp.png) 
 ## 0x01 环境:
-[![](https://img.shields.io/badge/Ubuntu-16.04LTS-brightgreen.svg)]()
-[![](https://img.shields.io/badge/Python-2.7-brightgreen.svg)]()
-[![](https://img.shields.io/badge/OpenCV-3.2.0-brightgreen.svg)]()
-[![](https://img.shields.io/badge/Mysql-5.7.*-brightgreen.svg)]()
-[![](https://img.shields.io/badge/phpmyadmin-*-brightgreen.svg)]()
-[![](https://img.shields.io/badge/ShadowSocks-Linux-brightgreen.svg)]()
+
 
 
 ## 0x02 目录树:
